@@ -1,0 +1,18 @@
+@page "{name}"
+@model Tp11.Pages.CityDetailsModel
+
+<h2>@Model.City?.Name - @Model.City?.Country.CountryName</h2>
+
+@if (Model.City?.Properties?.Any() == true)
+{
+<ul>
+    @foreach (var property in Model.City.Properties)
+        {
+    <li><strong>@property.Name</strong> - R$@property.PricePerNight</li>
+        }
+</ul>
+}
+else
+{
+<p>Nenhuma propriedade encontrada.</p>
+}
